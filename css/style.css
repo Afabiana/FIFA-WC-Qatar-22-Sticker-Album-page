@@ -1,0 +1,79 @@
+header{
+    margin-bottom: 25px;
+}
+a{
+    text-decoration: none;
+}
+.nav-link{
+    font-weight: bold;
+    font-size: 20px;
+}
+p{
+    margin: 0;
+}
+
+a.col-3,.figurita-container{
+    transition: transform .5s;
+    min-height: 275px;
+}
+a.col-3:hover{
+    transform: scale(1.1);
+}
+.bandera{
+    margin-bottom: 10px;
+}
+.bandera:hover, .figurita:hover{
+    box-shadow: -0.5rem 0.5rem 1rem black;
+}
+/*figus*/
+.figurita, .bandera{
+    max-width:261px;
+    max-height: 346px;
+    border-radius: 15px;
+}
+.pegada{
+    opacity: .6;
+}
+.fa-solid{
+    color: #0d6efd;
+}
+li span{
+    font-weight: bold;
+}
+.admin_actions{
+    font-weight: 900;
+    position: relative;
+    top: 10%;
+    left: 71%;
+}
+.circle-icon:hover{
+    background: white;
+}
+.circle-icon{
+    background: #ebebeb;
+    padding: 9px;
+    border-radius: 50%;
+}
+.btn-primary, div.collapse {
+    margin-bottom: 5px;
+}
+.flag{
+    width: 35%;
+    border-radius: 15px;
+}
+.container-form{
+    margin: 0px 15px;
+    min-height: 280px;
+}
+.collapse input, .collapse select{
+    width: 100%;
+}
+form.flex-column{
+    max-width: 351px;
+}
+.btn-primary{
+    font-size: 18px;
+}
+.fa-plus{
+    font-size: 50px;
+}
