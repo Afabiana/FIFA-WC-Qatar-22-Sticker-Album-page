@@ -1,16 +1,18 @@
 <?php
 class AuthHelper{
 
-    //lo puedo usar para cualquier tipo de controller o view
-    public function checkLoggedIn(){
+    public function checkLoggedIn() {
         session_start();
-    
-       if(!isset($_SESSION['USER_EMAIL'])){
-           return false;
+        if (!isset($_SESSION['IS_LOGGED'])) {
+            header("Location: " . BASE_URL . 'login/Auth');
+            die();
         }
-        
-        else {
-            return true;
+    } 
+
+    public function verifySession(){
+        if (session_status() !== PHP_SESSION_ACTIVE) {
+            session_start();
         }
     }
+    
 }
