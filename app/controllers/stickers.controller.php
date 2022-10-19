@@ -11,19 +11,19 @@ class StickersController{
     {
         $this->view= new StickersView;
         $this->model= new StickersModel;
-        //barrera de seguridad
         $this->authHelper = new AuthHelper();
-        $this->authHelper->checkLoggedIn();
     }
 
     function showFormAdd()
     {
+        $this->authHelper->checkLoggedIn();
         $teams=$this->model->getTeams();
         $this->view->showFormAdd($teams);
     }
 
     function insert()
     {
+        $this->authHelper->checkLoggedIn();
         if((isset($_POST['nombre'])&&!empty($_POST['nombre']))&&
         (isset($_POST['apellido'])&&!empty($_POST['apellido']))&&
         (isset($_POST['numero'])&&!empty($_POST['numero']))&&
@@ -41,6 +41,7 @@ class StickersController{
 
     function delete($arrNames)
     {   
+        $this->authHelper->checkLoggedIn();
         $names=explode("-",$arrNames);
         $nombre=$names[0];
         $apellido=$names[1];
@@ -50,6 +51,7 @@ class StickersController{
 
     function showUpdateForm($arrNames)
     {
+        $this->authHelper->verifySession();
         $names=explode("-",$arrNames);
         $nombre=$names[0];
         $apellido=$names[1];
@@ -59,6 +61,7 @@ class StickersController{
 
     function update()
     {
+        $this->authHelper->checkLoggedIn();
         $id=$_POST['id'];
         //podria usar la variable numero antes de que sea seteada? SI pero si justo esa variable viene vacia SE ROMPE TODO
 
