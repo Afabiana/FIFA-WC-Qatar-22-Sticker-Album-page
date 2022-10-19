@@ -36,7 +36,6 @@ class TeamsController{
         $_FILES['bandera_dir']["type"]=="image/png"){
             $this->model->insert($pais,$_FILES['bandera_dir']['tmp_name']);
         }
-        //hacer un else con show error
         header("Location: ".BASE_URL.'selecciones');
     }
 

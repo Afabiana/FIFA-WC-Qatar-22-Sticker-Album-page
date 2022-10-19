@@ -9,10 +9,11 @@ class AuthHelper{
         }
     } 
 
+     //abro la "caja" $_SESSION. Si esta vacia muestra la vista publica, sino vista de admin 
     public function verifySession(){
         if (session_status() !== PHP_SESSION_ACTIVE) {
             session_start();
         }
     }
-    
+
 }

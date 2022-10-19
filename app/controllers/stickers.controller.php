@@ -81,6 +81,8 @@ class StickersController{
             $tmpname=$_FILES["image_dir"]["tmp_name"];
             $this->model->setImageDirbyId($id,$tmpname);
         } 
+        //si o si setear ultimo el numero
+        //sino la bd va a buscar x dato con un id que todavia no existe
         if(isset($_POST['numero'])&&!empty($_POST['numero'])){
             $numero=$_POST['numero'];
             $sticker=$this->model->alreadyExists($numero);
